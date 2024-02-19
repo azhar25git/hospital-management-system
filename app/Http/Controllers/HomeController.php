@@ -18,6 +18,6 @@ class HomeController extends Controller
         }
 
         // not admin
-        return view('dashboard');
+        return view('user.home');
     }
 }
