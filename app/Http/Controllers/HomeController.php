@@ -22,6 +22,10 @@ class HomeController extends Controller
     }
 
     public function index() {
+        // admin
+        if(Auth::id() && Auth::user()->usertype == '1') {
+            return view('admin.home');
+        }
         return view('user.home');
     }
 }
