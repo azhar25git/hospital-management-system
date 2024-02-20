@@ -20,4 +20,8 @@ class HomeController extends Controller
         // not admin
         return view('user.home');
     }
+
+    public function index() {
+        return view('user.home');
+    }
 }
