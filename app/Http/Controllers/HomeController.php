@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,7 @@ class HomeController extends Controller
         if(Auth::user()->usertype == '1') {
             return view('admin.home');
         }
-
+        
         // not admin
         return view('user.home');
     }
@@ -26,6 +27,8 @@ class HomeController extends Controller
         if(Auth::id() && Auth::user()->usertype == '1') {
             return view('admin.home');
         }
-        return view('user.home');
+        $doctors = Doctor::all();
+        $path = "storage/doctorfiles";
+        return view('user.home' , compact('doctors', 'path'));
     }
 }

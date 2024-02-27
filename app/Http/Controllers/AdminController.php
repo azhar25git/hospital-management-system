@@ -32,9 +32,9 @@ class AdminController extends Controller
  
         $ext = $file->getClientOriginalExtension();
         $name = time() . ".$ext";
-        $path = "doctorfiles/$name";
-        if(Storage::disk('local')->put($path, $file)) {
-            $doctor->image = $path;
+        $path = "public/doctorfiles";
+        if(Storage::disk('local')->putFileAs($path, $file, $name)) {
+            $doctor->image = $name;
         } else {
             return redirect()
             ->back()

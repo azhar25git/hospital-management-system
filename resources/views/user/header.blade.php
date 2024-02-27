@@ -1,3 +1,8 @@
+<style>
+    .thumbnail {
+        min-height: 260px;
+    }
+</style>
 <header>
     <div class="topbar">
         <div class="container">
@@ -40,7 +45,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupport">
+            <div class="navbar-collapse" id="navbarSupport">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>

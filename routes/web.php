@@ -27,9 +27,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
 
-Route::get('/', [HomeController::class, 'index']);
+    Route::get('/add_doctor_view', [AdminController::class, 'add_doctor_view']);
+    Route::post('/save_doctor', [AdminController::class, 'save_doctor']);
+});
 Route::get('/home', [HomeController::class, 'redirect']);
-Route::get('/add_doctor_view', [AdminController::class, 'add_doctor_view']);
-Route::post('/save_doctor', [AdminController::class, 'save_doctor']);
+Route::get('/', [HomeController::class, 'index']);
+

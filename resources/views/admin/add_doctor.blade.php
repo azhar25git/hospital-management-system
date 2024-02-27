@@ -26,27 +26,27 @@
                 @csrf
                 <h1 class="pb-2 mb-4 fw-bold border-bottom border-white">Add Doctor</h1>
                 
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" value="{{ old('name')}}" name="name" class="form-control text-white bg-dark" id="name" aria-describedby="nameHelp" placeholder="Enter name">
+                <div class="d-flex mb-4">
+                  <label class="col-2 p-2" for="name">Name</label>
+                  <input type="text" value="{{ old('name')}}" name="name" class="col-10 text-white bg-dark" id="name" aria-describedby="nameHelp" placeholder="Enter name">
                   <small id="nameHelp" class="form-text text-danger {{ $errors->has('name') ? '' : 'd-none' }}">Full name is required</small>
                 </div>
 
-                <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input type="text" value="{{ old('phone')}}" name="phone" class="form-control text-white bg-dark" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone">
+                <div class="d-flex mb-4">
+                  <label class="col-2 p-2" for="phone">Phone</label>
+                  <input type="text" value="{{ old('phone')}}" name="phone" class="col-10 text-white bg-dark" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone">
                   <small id="phoneHelp" class="form-text text-danger {{ $errors->has('phone') ? '' : 'd-none' }}">Valid phone 10 digit</small>
                 </div>
 
-                <div class="form-group">
-                  <label for="roomnum">Room Number</label>
-                  <input type="text" value="{{ old('roomnum')}}" name="roomnum" class="form-control text-white bg-dark" id="roomnum" aria-describedby="roomnumHelp" placeholder="Enter Room Number">
+                <div class="d-flex mb-4">
+                  <label class="col-2 p-2" for="roomnum">Room No.</label>
+                  <input type="text" value="{{ old('roomnum')}}" name="roomnum" class="col-10 text-white bg-dark" id="roomnum" aria-describedby="roomnumHelp" placeholder="Enter Room Number">
                   <small id="roomnumHelp" class="form-text text-danger {{ $errors->has('roomnum') ? '' : 'd-none' }}">Required</small>
                 </div>
 
-                <div class="form-group">
-                    <label for="specialty">Specialty</label>
-                    <select class="text-white bg-dark form-control" name="specialty" id="specialty">
+                <div class="d-flex mb-4">
+                    <label class="col-2 p-2" for="specialty">Specialty</label>
+                    <select class="text-white bg-dark col-10" name="specialty" id="specialty">
                         <option value>--SELECT--</option>
                         <option value="ent" @if(old('specialty') && old('specialty') == 'ent') selected @endif>ENT</option>
                         <option value="cardiologist" @if(old('specialty') && old('specialty') == 'cardiologist') selected @endif>Cardiologist</option>
@@ -56,9 +56,9 @@
                     <small id="specialtyHelp" class="form-text text-danger {{ $errors->has('specialty') ? '' : 'd-none' }}">Required</small>
                 </div>
 
-                <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" class="form-control text-white bg-dark" name="image" id="image" accept="image/png">
+                <div class="d-flex mb-4">
+                    <label class="col-2 p-2" for="image">Image</label>
+                    <input type="file" class="col-10 text-white bg-dark px-3 py-2" name="image" id="image" accept="image/png">
                     <small id="imageHelp" class="form-text text-danger {{ $errors->has('image') ? '' : 'd-none' }}">Required</small>
                 </div>
                 
