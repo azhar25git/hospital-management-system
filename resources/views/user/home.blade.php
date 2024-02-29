@@ -1,56 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.user')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@section('page_title')
+Hospital Management System
+@endsection
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@section('page_content')
 
-    <meta name="copyright" content="MACode ID, https://macodeid.com/">
+    @include('partials.hero')
 
-    <title>One Health - Medical Center HTML5 Template</title>
+    @include('partials.doctor')
 
-    <link rel="stylesheet" href="../assets/css/maicons.css">
+    @include('partials.latest')
 
-    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    @include('partials.appointment')
 
-    <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
+    {{-- @include('partials.banner') --}}
 
-    <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
+    
 
-    <link rel="stylesheet" href="../assets/css/theme.css">
-</head>
+@endsection
 
-<body>
+@section('page_script')
+    <script>
+        const elem = document.getElementById("alert-btn-user");
+        if(elem) {
+            elem.addEventListener("click", function(event) {
+                this.parentElement.classList.toggle('d-none');
+            });
 
-    <!-- Back to top button -->
-    <div class="back-to-top"></div>
-
-    @include('user.header')
-
-    @include('user.hero')
-
-    @include('user.doctor')
-
-    @include('user.latest')
-
-    @include('user.appointment')
-
-    {{-- @include('user.banner') --}}
-
-    @include('user.footer')
-
-    <script src="../assets/js/jquery-3.5.1.min.js"></script>
-
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-    <script src="../assets/vendor/wow/wow.min.js"></script>
-
-    <script src="../assets/js/theme.js"></script>
-
-</body>
-
-</html>
+        }
+    </script>
+@endsection
