@@ -24,16 +24,21 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/add_doctor_view', [AdminController::class, 'add_doctor_view']);
-    Route::post('/save_doctor', [AdminController::class, 'save_doctor']);
+    // Home/ User
     Route::get('/user_appointments', [HomeController::class, 'user_appointments']);
     Route::delete('/cancel_appointment/{id}', [HomeController::class, 'cancel_appointment']);
+    Route::get('/home', [HomeController::class, 'redirect']);
+    // Admin
+    Route::get('/add_doctor_view', [AdminController::class, 'add_doctor_view']);
+    Route::post('/save_doctor', [AdminController::class, 'save_doctor']);
 });
+
+// Visitor
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'redirect']);
 Route::post('/appointment', [HomeController::class, 'appointment']);
 
