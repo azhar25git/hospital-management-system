@@ -20,12 +20,3 @@
 <!-- Custom js for this page -->
 <script src="admin/assets/js/dashboard.js"></script>
 <!-- End custom js for this page -->
-<script>
-    const elem = document.getElementById("alert-btn");
-    if (elem) {
-        elem.addEventListener("click", function(event) {
-            this.parentElement.classList.toggle('d-none');
-        });
-
-    }
-</script>

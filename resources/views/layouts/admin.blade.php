@@ -35,6 +35,16 @@
       <!-- page-body-wrapper ends -->
     </div>
 
+    <script>
+        const elem = document.getElementById("admin-alert");
+        if (elem) {
+            elem.addEventListener("click", function(event) {
+                this.parentElement.classList.toggle('d-none');
+            });
+    
+        }
+    </script>
+
     @include('admin.partials.scripts')
 
     {{-- page specific scripts --}}

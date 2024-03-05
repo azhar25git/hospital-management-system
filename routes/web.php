@@ -34,8 +34,12 @@ Route::middleware([
     Route::delete('/cancel_appointment/{id}', [HomeController::class, 'cancel_appointment']);
     Route::get('/home', [HomeController::class, 'redirect']);
     // Admin
-    Route::get('/add_doctor_view', [AdminController::class, 'add_doctor_view']);
+    Route::get('/get_doctors', [AdminController::class, 'get_doctors']);
+    Route::get('/add_doctor_view/{id?}', [AdminController::class, 'add_doctor_view']);
     Route::post('/save_doctor', [AdminController::class, 'save_doctor']);
+    Route::get('/get_appointments', [AdminController::class, 'get_appointments']);
+    Route::get('/approve_appointment/{id}', [AdminController::class, 'approve_appointment']);
+    Route::get('/disapprove_appointment/{id}', [AdminController::class, 'disapprove_appointment']);
 });
 
 // Visitor
